@@ -1,0 +1,8 @@
+Within this module, you will learn fundamental principles of cyber security, as well 
+as how this fits into the wider computing landscape. You will also learn about core 
+cyber security technologies and techniques, and how these are used to secure a 
+wide range of computational systems and networks.
+
+Credits: 20
+
+Assessment Method: 2,000-word research report and 2,000-word risk assessment report

@@ -1,0 +1,8 @@
+This module establishes an understanding of the characteristics and implications 
+which are inherent in the solution of complex, real-world data science and AIoriented problems. You will learn to critically evaluate and apply different Machine 
+Learning and Data Mining techniques for exemplifying data patterns, as well as 
+using Machine Learning tools to build an Artificial Intelligence software solution
+
+Credits: 20
+
+Assessment Method: Practical Assessment of an AI Solution Development and presentation

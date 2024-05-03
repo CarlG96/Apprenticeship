@@ -1,0 +1,9 @@
+Cloud technology is a popular term used frequently in today's world to indicate innovative 
+concepts and usage of technology. This module will be carried out with the support of the AWS 
+(Amazon Web Services) Academy and as such students will be developing their practical skills as 
+well as enhancing their understanding. You will also be working towards the knowledge required 
+to undertake the AWS Certified Cloud Practitioner industry certification.
+
+Credits: 20
+
+Assessment Method: 4000-word report

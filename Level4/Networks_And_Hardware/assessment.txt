@@ -1,0 +1,9 @@
+This module supports learner to understand the components of typical computing 
+devices and how to select appropriate components to support application 
+requirements. Learners will also understand the Fundamental networking concepts 
+and protocol suites, how to select and configure industry standard network appliances 
+and how to identify and troubleshoot network errors.
+
+Credits: 20
+
+Assessment Method: Portfolio of work responding to a case study and a 60-minute practical skills Test

@@ -1,0 +1,8 @@
+This module introduces you to software development. You will learn how to analyse a 
+problem, select suitable test criteria, design an appropriate solution, implement clear 
+code and ensure that your solution works as expected. Whether a complete novice or 
+someone with some prior experience you will benefit from studying this module
+
+Credits: 20
+
+Assessment Method: Class Test using portfolio - 1 hour

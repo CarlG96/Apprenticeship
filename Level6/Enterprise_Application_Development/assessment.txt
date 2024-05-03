@@ -1,0 +1,10 @@
+In this module, you will learn and practice the theory and 
+principles of enterprise development. You will also use 
+industry-standard methods, tools, and frameworks to develop 
+server-side web applications.
+
+Credits: 20
+
+Assessment Method: 1,500-word report and 30-
+Minute demonstration 
+

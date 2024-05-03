@@ -1,0 +1,12 @@
+In this module, you will develop your knowledge and skills of 
+software development by learning about current front end 
+web development; how to design, develop and test front-end 
+web applications as well as learn associated good practice. 
+Your knowledge, skills and behaviours will be evidenced 
+through the development of a web application that 
+communicates with an Application Programmable Interface 
+(API).
+
+Credits: 20
+
+Assessment Method: 2,000-word report and a 20-minute presentation 

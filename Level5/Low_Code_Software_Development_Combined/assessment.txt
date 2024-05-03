@@ -1,0 +1,9 @@
+This module introduces you to low and no code platform development. These platforms of 
+solutions are becoming increasing popular in small and large enterprise due to the benefits such 
+as increased productivity, reduced costs, faster time to market and digital transformation. 
+You will learn how to analyse a problem, select suitable test criteria, design an appropriate 
+solution, implement your solution and ensure that your solution works as expected.
+
+Credits: 20
+
+Assessment Method: 1,500 words design documentation and 30-minute presentation demonstration

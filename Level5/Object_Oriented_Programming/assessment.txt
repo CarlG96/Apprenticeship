@@ -1,0 +1,11 @@
+In this module, you will further develop your knowledge and 
+skills of software development by learning about Object 
+Orientated Programming; that is how to design, develop and 
+test these types of applications as well as learn associated 
+good practice. Your knowledge, skills and behaviours will be 
+evidenced through the development of a server-based 
+application.
+
+Credits: 20 
+
+Assessment Method: 20-Minute Demonstration of implementing and testing an object orientated server solution

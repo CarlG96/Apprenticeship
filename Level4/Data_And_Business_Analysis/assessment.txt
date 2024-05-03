@@ -1,0 +1,8 @@
+This module introduces the notion of process orientation and gives experience of 
+modelling business processes as activities that create value for customers. It gives you 
+the potential to work as business analysts and to improve business processes in an 
+organisation in the public or private sectors
+
+Credit: 20
+
+Assessment Method: Assignment and Database Implementation
