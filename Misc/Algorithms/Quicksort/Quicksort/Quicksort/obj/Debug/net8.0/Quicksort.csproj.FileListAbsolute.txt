@@ -1,0 +1,15 @@
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\bin\Debug\net8.0\Quicksort.exe
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\bin\Debug\net8.0\Quicksort.deps.json
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\bin\Debug\net8.0\Quicksort.runtimeconfig.json
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\bin\Debug\net8.0\Quicksort.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\bin\Debug\net8.0\Quicksort.pdb
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\Quicksort.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\Quicksort.AssemblyInfoInputs.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\Quicksort.AssemblyInfo.cs
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\Quicksort.csproj.CoreCompileInputs.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\Quicksort.sourcelink.json
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\Quicksort.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\refint\Quicksort.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\Quicksort.pdb
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\Quicksort.genruntimeconfig.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Quicksort\Quicksort\Quicksort\obj\Debug\net8.0\ref\Quicksort.dll
