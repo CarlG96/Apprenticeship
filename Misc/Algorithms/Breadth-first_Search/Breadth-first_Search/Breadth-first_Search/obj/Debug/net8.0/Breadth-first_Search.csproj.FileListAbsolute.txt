@@ -1,0 +1,15 @@
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\bin\Debug\net8.0\Breadth-first_Search.exe
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\bin\Debug\net8.0\Breadth-first_Search.deps.json
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\bin\Debug\net8.0\Breadth-first_Search.runtimeconfig.json
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\bin\Debug\net8.0\Breadth-first_Search.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\bin\Debug\net8.0\Breadth-first_Search.pdb
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\Breadth-first_Search.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\Breadth-first_Search.AssemblyInfoInputs.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\Breadth-first_Search.AssemblyInfo.cs
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\Breadth-first_Search.csproj.CoreCompileInputs.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\Breadth-first_Search.sourcelink.json
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\Breadth-first_Search.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\refint\Breadth-first_Search.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\Breadth-first_Search.pdb
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\Breadth-first_Search.genruntimeconfig.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Misc\Algorithms\Breadth-first_Search\Breadth-first_Search\Breadth-first_Search\obj\Debug\net8.0\ref\Breadth-first_Search.dll

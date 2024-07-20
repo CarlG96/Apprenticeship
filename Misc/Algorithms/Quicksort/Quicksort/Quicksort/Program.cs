@@ -8,6 +8,7 @@ namespace Quicksort
         {
             // Quicksort is a divide and conquer algorithm
             // You have to pick a pivot point on the array, and then sort out anything larger than or smaller than the pivot
+            // Quicksort's worst case scenario is On2 but is generally considered faster than merge sort because of the constant
             List<int> arr = Enumerable.Range(1, 10000).ToList();
             Random r = new Random();
             arr = arr.OrderBy(x => r.Next()).ToList();

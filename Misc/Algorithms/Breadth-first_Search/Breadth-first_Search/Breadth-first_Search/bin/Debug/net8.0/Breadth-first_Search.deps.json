@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Breadth-first_Search/1.0.0": {
+        "runtime": {
+          "Breadth-first_Search.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Breadth-first_Search/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
