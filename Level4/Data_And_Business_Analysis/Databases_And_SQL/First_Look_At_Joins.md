@@ -154,10 +154,6 @@ the join field, is:
 
 ```SQL
 SELECT *
-FROM <table1> LEFT 
+FROM <table1> LEFT OUTER JOIN <table2>
+on <join condition>
 ```
-
-
-
-
-
