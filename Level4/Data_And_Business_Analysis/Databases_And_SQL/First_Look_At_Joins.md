@@ -106,7 +106,56 @@ Member m INNER JOIN Entry m on m.MemberID = e.MemberID;
 
 The only difference would be only one of the MemberID columns would be returned in the natural join.
 
+## Outer Joins, left and right
 
+Outer joins allow you to take all the rows you want from one table, and then add on information from another table if it is appropriate. This allows you to hold onto rows where the first table row does not meet the condition specified, but you still want it present eg if you wanted to add memebership fees on to the end of a table based on the role in the club, but some rows didn't have roles, you could still have them present here. This is how you would do an outer join (the left or right specifies which table you want to take the bulk of the info from):
+
+```SQL
+SELECT *
+FROM Member m LEFT OUTER JOIN Type t ON m.MemberType = t.Type;
+```
+
+The above query says: "Give me all the information from the Member table, and append the information from the Type table where it can be added, otherwise have it showing as null.
+
+This query will retreive the same data, but due to being a right join might not present the data in the same order:
+
+```SQL
+SELECT *
+FROM Type t RIGHT OUTER JOIN Member m ON m.MemberType = t.Type;
+```
+
+### Conclusion:
+
+SQL for Cartesian Product:
+
+```SQL
+SELECT *
+From <table1> CROSS JOIN <table2>;
+```
+
+SQL For inner join reflecting the outcome approach:
+
+```SQL
+SELECT *
+FROM <table1>, <table2>
+WHERE <join condition>;
+```
+
+SQL for inner join reflecting the process approach is:
+
+```SQL
+SELECT *
+FROM <table1> INNER JOIN <table2>
+ON <join condition>;
+```
+
+SQL for outer join, which will retain all the rows in the left-hand table including those with a null in 
+the join field, is:
+
+```SQL
+SELECT *
+FROM <table1> LEFT 
+```
 
 
 
