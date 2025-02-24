@@ -1,14 +1,14 @@
 ﻿namespace InfiniteSilliness;
 
-public interface IFightBehaviour
+public interface IWeaponBehaviour
 {
     void Fight();
 }
 
-internal class WarriorFightBehaviour : IFightBehaviour
+internal class SwordBehaviour : IWeaponBehaviour
 {
     public void Fight()
     {
-        Console.WriteLine("Warrior fight");
+        Console.WriteLine("Swing sword");
     }
 }

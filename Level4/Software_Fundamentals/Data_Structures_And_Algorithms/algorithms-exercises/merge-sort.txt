@@ -1,0 +1,9 @@
+Merge sort is a recursive algorithm that has you:
+
+1) Split an array that you want to sort in half
+2) Keep splitting until you reach a single item for each of the values
+3) Then 'pass back up the chain', merging the two sorted list 
+by comparison as it goes back up the chain
+4) When it does this, you create a new array by comparing the first items of 
+both arrays
+5) Eventually, at the top, you will have a sorted array

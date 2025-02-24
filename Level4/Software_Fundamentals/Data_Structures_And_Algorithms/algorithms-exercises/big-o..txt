@@ -1,0 +1,31 @@
+Big O is how we analyze how efficient algorithms are.
+
+It removes all the unimportant details and leaves all the important details
+
+Example if the time it took to search an array could be described as 3xsquared + x + 1, then the xsquared is the part
+we care about, as it is the thing that will grow the most with scaling numbers. 
+We don't care about constants or the smaller terms, because the x will only make an increasingly small difference
+and the 1 even more so.
+
+O(1) - constant time, the constant value in the expression is the largest
+O(n) - linear time, the x value in the expression is the largest
+O(logn) - logarithmic time, the increases in time as you add input diminishes, so it 
+is better the larger the input size is, it is in base 2 logarithms
+O(nsquared) - quadratic time, the xsquared value in the expression is the largest
+
+Spatial complexity is another factor to Big O, regarding how much RAM is being used by the program
+
+Bubble Sort - Biggest numbers 'bubble up' to the top of the array. Does comparison in the same way
+a human would, comparing each item to the next and swapping if it is larger than the next item. 
+
+ Stability in sorting is whether, if items should not be swapped, they aren't. For example, in trying to order 
+ numbers, would a 2 and a 2 be swapped by the algorithm?
+
+ Destructive sorting means it is working on the original input itself, and mutating it.
+ 
+ Insertion sort has the same time complexity as Bubblesort, but can be slightly better than quicksort
+ or merge sort in the occasion that the list is mostly sorted. The outer loop i starts at 1.
+ It involves taking a value and going backwards
+ to swap. Insertion sort you 'hold' the value of the insertion and walk backwards in the inner for loop until the
+ 'j' value is -1 or the held value is not larger than the value being looked at, swapping numbers as you go,
+  then you insert the held value at j + 1 as soon as that is true.
