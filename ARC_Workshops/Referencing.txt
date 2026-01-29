@@ -1,0 +1,6 @@
+- Journals are good for referencing, they also tend to have lots of references themselves
+- O'Reilly Answers is good for getting an AI reference for the sum of O'Reilly books
+- Staffordshire Uni is available as well
+- Packt, referenced by Josh
+- Try to avoid referencing websites, unless they are recognised official bodies or have official documents on their sites (examples being CISCO or Microsoft Learn)
+- Gartner website

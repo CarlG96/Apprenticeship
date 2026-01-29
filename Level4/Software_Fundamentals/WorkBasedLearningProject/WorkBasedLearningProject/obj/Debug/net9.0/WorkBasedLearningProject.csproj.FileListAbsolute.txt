@@ -1,0 +1,15 @@
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\bin\Debug\net9.0\WorkBasedLearningProject.exe
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\bin\Debug\net9.0\WorkBasedLearningProject.deps.json
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\bin\Debug\net9.0\WorkBasedLearningProject.runtimeconfig.json
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\bin\Debug\net9.0\WorkBasedLearningProject.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\bin\Debug\net9.0\WorkBasedLearningProject.pdb
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\WorkBasedLearningProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\WorkBasedLearningProject.AssemblyInfoInputs.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\WorkBasedLearningProject.AssemblyInfo.cs
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\WorkBasedLearningProject.csproj.CoreCompileInputs.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\WorkBasedLearningProject.sourcelink.json
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\WorkBasedLearningProject.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\refint\WorkBasedLearningProject.dll
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\WorkBasedLearningProject.pdb
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\WorkBasedLearningProject.genruntimeconfig.cache
+C:\Users\CGardiner\Documents\Apprenticeship\Level4\Software_Fundamentals\WorkBasedLearningProject\WorkBasedLearningProject\obj\Debug\net9.0\ref\WorkBasedLearningProject.dll
