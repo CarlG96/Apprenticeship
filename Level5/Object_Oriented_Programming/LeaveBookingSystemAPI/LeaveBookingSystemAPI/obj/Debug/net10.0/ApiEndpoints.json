@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "LeaveBookingSystemAPI.Controllers.WeatherForecastController",
+    "ContainingType": "LeaveBookingSystemAPI.Controllers.LeaveController",
     "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "RelativePath": "api/Leave/blah",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -17,7 +17,6 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    ]
   }
 ]

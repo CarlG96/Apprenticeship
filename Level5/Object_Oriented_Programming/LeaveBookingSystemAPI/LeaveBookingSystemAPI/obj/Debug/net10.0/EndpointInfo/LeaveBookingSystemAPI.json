@@ -13,12 +13,11 @@
     }
   ],
   "paths": {
-    "/WeatherForecast": {
+    "/api/Leave/blah": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Leave"
         ],
-        "operationId": "GetWeatherForecast",
         "responses": {
           "200": {
             "description": "OK",
@@ -90,7 +89,7 @@
   },
   "tags": [
     {
-      "name": "WeatherForecast"
+      "name": "Leave"
     }
   ]
 }

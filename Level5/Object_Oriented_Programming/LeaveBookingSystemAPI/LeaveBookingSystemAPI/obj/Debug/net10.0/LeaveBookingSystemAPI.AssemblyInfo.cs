@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LeaveBookingSystemAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff104b69045e87a6a323a806ad457cbb170bdd3c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ba6907b50342c74f0b72ce74fe4222b235ff6de")]
 [assembly: System.Reflection.AssemblyProductAttribute("LeaveBookingSystemAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LeaveBookingSystemAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
