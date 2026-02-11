@@ -1,1 +1,4 @@
 SDMSJsonGenerator*
+~$*.docx
+~$*
+*.tmp
