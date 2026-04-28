@@ -1,0 +1,15 @@
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\bin\Debug\net10.0\DesignPatterns.exe
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\bin\Debug\net10.0\DesignPatterns.deps.json
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\bin\Debug\net10.0\DesignPatterns.runtimeconfig.json
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\bin\Debug\net10.0\DesignPatterns.dll
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\bin\Debug\net10.0\DesignPatterns.pdb
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\DesignPatterns.GeneratedMSBuildEditorConfig.editorconfig
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\DesignPatterns.AssemblyInfoInputs.cache
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\DesignPatterns.AssemblyInfo.cs
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\DesignPatterns.csproj.CoreCompileInputs.cache
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\DesignPatterns.sourcelink.json
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\DesignPatterns.dll
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\refint\DesignPatterns.dll
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\DesignPatterns.pdb
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\DesignPatterns.genruntimeconfig.cache
+C:\Apprenticeship\Level5\Object_Oriented_Programming\DesignPatterns\DesignPatterns\obj\Debug\net10.0\ref\DesignPatterns.dll

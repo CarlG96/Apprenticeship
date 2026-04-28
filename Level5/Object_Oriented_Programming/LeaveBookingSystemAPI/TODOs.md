@@ -1,0 +1,12 @@
+- Create DB models in the database with tables and linking them correctly
+-- User
+-- Role
+-- UserManagement
+-- LeaveRequest
+- Create corresponding data models in the ORM code
+- Port over the routes to the code that has the ORM dependencies
+- Go through, route by route, adding a bruno collection for each route
+- 15 routes in total (including auth, done last), can the auth be done as part of the check?
+- Already will have some decorators in there (find out how to add the other from the tutorial), add state pattern + potentially 
+- Dependency inject logging through file system
+- What does the analytics mean? It means what queries would be made in order to get useful information out of the system?

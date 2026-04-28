@@ -1,0 +1,6 @@
+import { MyRouter } from "./routes/MyRouter"; 
+import { Router } from "express"; 
+import { Server } from "./Server"; 
+const myRouter = new MyRouter(Router()); 
+const server = new Server(myRouter, 8900); 
+server.start(); 
