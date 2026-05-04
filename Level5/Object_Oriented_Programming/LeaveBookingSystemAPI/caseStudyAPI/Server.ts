@@ -1,6 +1,10 @@
 import express, { Request, Response } from "express";
 import { DataSource } from "typeorm";
-import { RoleRouter } from "./routes/RoleRouter";
+import { AdminRequestRouter } from "./routers/AdminRequestRouter";
+import { AuthRouter } from "./routers/AuthRouter";
+import { ManagerRequestRouter } from "./routers/ManagerRequestRouter";
+import { RoleRouter } from "./routers/RoleRouter";
+import { StaffRequestRouter } from "./routers/StaffRequestRouter";
 import { StatusCodes } from "http-status-codes";
 
 export class Server {
@@ -8,11 +12,14 @@ export class Server {
 
   constructor(
     private readonly port: string | number,
+    private readonly adminRequestRouter: AdminRequestRouter,
+    private readonly authRouter: AuthRouter,
+    private readonly managerRequestRouter: ManagerRequestRouter,
     private readonly roleRouter: RoleRouter,
+    private readonly staffRequestRouter: StaffRequestRouter,
     private readonly appDataSource: DataSource,
   ) {
     this.app = express();
-
     this.initialiseMiddlewares();
     this.initialiseRoutes();
     this.initialiseErrorHandling();
@@ -23,7 +30,11 @@ export class Server {
   }
 
   private initialiseRoutes() {
-    this.app.use("/api/roles", this.roleRouter.getRouter());
+    this.app.use("/api/admin", this.adminRequestRouter.getRouter());
+    this.app.use("/api/auth", this.authRouter.getRouter());
+    this.app.use("/api/manager", this.managerRequestRouter.getRouter());
+    this.app.use("/api/role", this.roleRouter.getRouter());
+    this.app.use("/api/staff", this.staffRequestRouter.getRouter());
   }
 
   private initialiseErrorHandling() {

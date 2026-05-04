@@ -5,14 +5,12 @@ import { Repository } from "typeorm";
 import { StatusCodes } from "http-status-codes";
 
 export class RoleController {
-  private roleRepository: Repository<Role>;
-
-  constructor() {
-    this.roleRepository = AppDataSource.getRepository(Role);
+  private get roleRepository(): Repository<Role> {
+    return AppDataSource.getRepository(Role);
   }
 
   // Get all users
-  public getAll = async (req: Request, res: Response): Promise<void> => {
+  public getAllRoles = async (req: Request, res: Response): Promise<void> => {
     try {
       const roles = await this.roleRepository.find();
 
@@ -30,7 +28,7 @@ export class RoleController {
   };
 
   // Get Role by ID
-  public getById = async (req: Request, res: Response): Promise<void> => {
+  public getRoleById = async (req: Request, res: Response): Promise<void> => {
     const id = parseInt(req.params.id as string);
 
     if (isNaN(id)) {
