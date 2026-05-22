@@ -1,0 +1,17 @@
+info:
+  name: managerApproveStaffLeaveRequest
+  type: http
+  seq: 13
+
+http:
+  method: PATCH
+  url: http://localhost:8901/api/manager/leave-requests/18/approve
+  auth:
+    type: bearer
+    token: "{{loginManager}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

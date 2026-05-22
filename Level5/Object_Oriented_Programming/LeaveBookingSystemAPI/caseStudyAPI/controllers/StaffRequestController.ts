@@ -1,11 +1,12 @@
-import { Request, Response } from 'express';
-import { StatusCodes } from 'http-status-codes';
-import { AppDataSource } from '../src/data-source';
-import { LeaveRequest } from '../src/entity/LeaveRequest';
-import { LeaveRequestStatus } from '../src/entity/LeaveRequestStatus';
-import { LeaveType } from '../src/entity/LeaveType';
-import { LeaveBalance } from '../src/entity/LeaveBalance';
-import { User } from '../src/entity/User';
+import { Request, Response } from "express";
+import { StatusCodes } from "http-status-codes";
+import {
+  LeaveRequestRepositoryFactory,
+  LeaveRequestStatusRepositoryFactory,
+  LeaveTypeRepositoryFactory,
+  LeaveBalanceRepositoryFactory,
+  UserRepositoryFactory,
+} from "../src/factories/Factories";
 
 interface JwtAuthRequest extends Request {
   user?: {
@@ -16,153 +17,214 @@ interface JwtAuthRequest extends Request {
 }
 
 export class StaffRequestController {
+  private userRepositoryFactory: UserRepositoryFactory;
+  private leaveRequestRepositoryFactory: LeaveRequestRepositoryFactory;
+  private leaveRequestStatusRepositoryFactory: LeaveRequestStatusRepositoryFactory;
+  private leaveTypeRepositoryFactory: LeaveTypeRepositoryFactory;
+  private leaveBalanceRepositoryFactory: LeaveBalanceRepositoryFactory;
+
+  constructor(
+    userRepositoryFactory: UserRepositoryFactory,
+    leaveRequestRepositoryFactory: LeaveRequestRepositoryFactory,
+    leaveRequestStatusRepositoryFactory: LeaveRequestStatusRepositoryFactory,
+    leaveTypeRepositoryFactory: LeaveTypeRepositoryFactory,
+    leaveBalanceRepositoryFactory: LeaveBalanceRepositoryFactory,
+  ) {
+    this.userRepositoryFactory = userRepositoryFactory;
+    this.leaveRequestRepositoryFactory = leaveRequestRepositoryFactory;
+    this.leaveRequestStatusRepositoryFactory =
+      leaveRequestStatusRepositoryFactory;
+    this.leaveTypeRepositoryFactory = leaveTypeRepositoryFactory;
+    this.leaveBalanceRepositoryFactory = leaveBalanceRepositoryFactory;
+  }
+
   // POST me/leave-requests
   // Creates a new annual leave request with initial Pending status.
-  public async createLeaveRequest(req: JwtAuthRequest, res: Response): Promise<void> {
+  public createLeaveRequest = async (
+    req: JwtAuthRequest,
+    res: Response,
+  ): Promise<void> => {
     try {
-      const leaveRequestRepo = AppDataSource.getRepository(LeaveRequest);
-      const statusRepo = AppDataSource.getRepository(LeaveRequestStatus);
-      const leaveTypeRepo = AppDataSource.getRepository(LeaveType);
-      const userRepo = AppDataSource.getRepository(User);
-
+      const leaveRequestRepo =
+        this.leaveRequestRepositoryFactory.createLeaveRequestRepository();
+      const statusRepo =
+        this.leaveRequestStatusRepositoryFactory.createLeaveRequestStatusRepository();
+      const leaveTypeRepo =
+        this.leaveTypeRepositoryFactory.createLeaveTypeRepository();
+      const userRepo = this.userRepositoryFactory.createUserRepository();
       const { leaveTypeId, startDate, endDate } = req.body;
       const userId = req.user?.userId;
-
       if (!userId) {
-        res.status(StatusCodes.UNAUTHORIZED).json({ error: 'User not authenticated' });
+        res
+          .status(StatusCodes.UNAUTHORIZED)
+          .json({ error: "User not authenticated" });
         return;
       }
-
-      const user = await userRepo.findOne({ where: { id: userId } });
+      const user = await userRepo.findById(userId);
       if (!user) {
-        res.status(StatusCodes.UNAUTHORIZED).json({ error: 'User not found' });
+        res.status(StatusCodes.UNAUTHORIZED).json({ error: "User not found" });
         return;
       }
-
-      const leaveType = await leaveTypeRepo.findOne({ where: { id: leaveTypeId } });
+      const leaveType = await leaveTypeRepo.findById(leaveTypeId);
       if (!leaveType) {
-        res.status(StatusCodes.BAD_REQUEST).json({ error: 'Invalid leave type' });
+        res
+          .status(StatusCodes.BAD_REQUEST)
+          .json({ error: "Invalid leave type" });
         return;
       }
-
-      const pendingStatus = await statusRepo.findOne({ where: { status: 'Pending' } });
+      const pendingStatus = await statusRepo.findByStatus("Pending");
       if (!pendingStatus) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Pending status not found' });
+        res
+          .status(StatusCodes.INTERNAL_SERVER_ERROR)
+          .json({ error: "Pending status not found" });
         return;
       }
-
-      const leaveRequest = new LeaveRequest();
-      leaveRequest.user = user;
-      leaveRequest.leaveType = leaveType;
-      leaveRequest.status = pendingStatus;
-      leaveRequest.startDate = new Date(startDate);
-      leaveRequest.endDate = new Date(endDate);
-
+      const leaveRequest = leaveRequestRepo.create({
+        user,
+        leaveType,
+        status: pendingStatus,
+        startDate: new Date(startDate),
+        endDate: new Date(endDate),
+      });
       await leaveRequestRepo.save(leaveRequest);
 
-      res.status(StatusCodes.CREATED).json(leaveRequest);
+      const { user: _user, ...leaveRequestWithoutUser } = leaveRequest;
+
+      res.status(StatusCodes.CREATED).json({
+        message: "Leave request created",
+        leaveRequest: leaveRequestWithoutUser,
+      });
     } catch (error) {
-      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
+      res
+        .status(StatusCodes.INTERNAL_SERVER_ERROR)
+        .json({ error: error.message });
     }
-  }
+  };
 
   // PATCH /staff/me/leave-requests/:requestId/cancel
   // Allows staff to cancel an existing leave request.
-  public async cancelLeaveRequest(req: JwtAuthRequest, res: Response): Promise<void> {
+  public cancelLeaveRequest = async (
+    req: JwtAuthRequest,
+    res: Response,
+  ): Promise<void> => {
     try {
-      const leaveRequestRepo = AppDataSource.getRepository(LeaveRequest);
-      const userRepo = AppDataSource.getRepository(User);
+      const leaveRequestRepo =
+        this.leaveRequestRepositoryFactory.createLeaveRequestRepository();
+      const userRepo = this.userRepositoryFactory.createUserRepository();
+
       const { requestId } = req.params;
       const userId = req.user?.userId;
 
       if (!userId) {
-        res.status(StatusCodes.UNAUTHORIZED).json({ error: 'User not authenticated' });
+        res
+          .status(StatusCodes.UNAUTHORIZED)
+          .json({ error: "User not authenticated" });
         return;
       }
 
-      const user = await userRepo.findOne({ where: { id: userId } });
+      const user = await userRepo.findById(userId);
       if (!user) {
-        res.status(StatusCodes.UNAUTHORIZED).json({ error: 'User not found' });
+        res.status(StatusCodes.UNAUTHORIZED).json({ error: "User not found" });
         return;
       }
 
-      const leaveRequest = await leaveRequestRepo.findOne({
-        where: { id: parseInt(requestId as string), user: { id: user.id } },
-        relations: ['user', 'leaveType', 'status']
-      });
+      const leaveRequest = await leaveRequestRepo.findByUserAndId(
+        userId,
+        parseInt(requestId as string),
+      );
 
       if (!leaveRequest) {
-        res.status(StatusCodes.NOT_FOUND).json({ error: 'Leave request not found' });
+        res
+          .status(StatusCodes.NOT_FOUND)
+          .json({ error: "Leave request not found" });
         return;
       }
 
       await leaveRequest.cancel();
       await leaveRequestRepo.save(leaveRequest);
 
-      res.status(StatusCodes.OK).json(leaveRequest);
+      const { user: _user, ...leaveRequestWithoutUser } = leaveRequest;
+
+      res.status(StatusCodes.CREATED).json({
+        message: "Leave request cancelled",
+        leaveRequest: leaveRequestWithoutUser,
+      });
     } catch (error) {
-      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
+      res
+        .status(StatusCodes.INTERNAL_SERVER_ERROR)
+        .json({ error: error.message });
     }
-  }
+  };
 
   // GET /staff/me/leave-requests
   // Returns all requests with their statuses.
-  public async getMyLeaveRequests(req: JwtAuthRequest, res: Response): Promise<void> {
+  public getMyLeaveRequests = async (
+    req: JwtAuthRequest,
+    res: Response,
+  ): Promise<void> => {
     try {
-      const leaveRequestRepo = AppDataSource.getRepository(LeaveRequest);
-      const userRepo = AppDataSource.getRepository(User);
+      const leaveRequestRepo =
+        this.leaveRequestRepositoryFactory.createLeaveRequestRepository();
+      const userRepo = this.userRepositoryFactory.createUserRepository();
+
       const userId = req.user?.userId;
 
       if (!userId) {
-        res.status(StatusCodes.UNAUTHORIZED).json({ error: 'User not authenticated' });
+        res
+          .status(StatusCodes.UNAUTHORIZED)
+          .json({ error: "User not authenticated" });
         return;
       }
 
-      const user = await userRepo.findOne({ where: { id: userId } });
+      const user = await userRepo.findById(userId);
       if (!user) {
-        res.status(StatusCodes.UNAUTHORIZED).json({ error: 'User not found' });
+        res.status(StatusCodes.UNAUTHORIZED).json({ error: "User not found" });
         return;
       }
 
-      const leaveRequests = await leaveRequestRepo.find({
-        where: { user: { id: user.id } },
-        relations: ['leaveType', 'status']
-      });
+      const leaveRequests = await leaveRequestRepo.findByUser(userId);
 
       res.status(StatusCodes.OK).json(leaveRequests);
     } catch (error) {
-      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
+      res
+        .status(StatusCodes.INTERNAL_SERVER_ERROR)
+        .json({ error: error.message });
     }
-  }
+  };
 
   // GET /staff/me/leave-balance
   // Returns remaining/used leave for the current business year.
-  public async getMyLeaveBalance(req: JwtAuthRequest, res: Response): Promise<void> {
+  public getMyLeaveBalance = async (
+    req: JwtAuthRequest,
+    res: Response,
+  ): Promise<void> => {
     try {
-      const balanceRepo = AppDataSource.getRepository(LeaveBalance);
-      const userRepo = AppDataSource.getRepository(User);
+      const leaveBalanceRepo =
+        this.leaveBalanceRepositoryFactory.createLeaveBalanceRepository();
+      const userRepo = this.userRepositoryFactory.createUserRepository();
+
       const userId = req.user?.userId;
 
       if (!userId) {
-        res.status(StatusCodes.UNAUTHORIZED).json({ error: 'User not authenticated' });
+        res
+          .status(StatusCodes.UNAUTHORIZED)
+          .json({ error: "User not authenticated" });
         return;
       }
 
-      const user = await userRepo.findOne({ where: { id: userId } });
+      const user = await userRepo.findById(userId);
       if (!user) {
-        res.status(StatusCodes.UNAUTHORIZED).json({ error: 'User not found' });
+        res.status(StatusCodes.UNAUTHORIZED).json({ error: "User not found" });
         return;
       }
 
-      const balances = await balanceRepo.find({
-        where: { user: { id: user.id } },
-        relations: ['leaveType']
-      });
+      const balances = await leaveBalanceRepo.findByUser(user);
 
       res.status(StatusCodes.OK).json(balances);
     } catch (error) {
-      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
+      res
+        .status(StatusCodes.INTERNAL_SERVER_ERROR)
+        .json({ error: error.message });
     }
-  }
+  };
 }
-

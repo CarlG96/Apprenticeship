@@ -1,18 +1,20 @@
 import { Request, Response } from "express";
-import { AppDataSource } from "../src/data-source";
-import { Role } from "../src/entity/Role";
-import { Repository } from "typeorm";
+import { RoleRepository } from "../src/repositories/RoleRepository";
 import { StatusCodes } from "http-status-codes";
+import { RoleRepositoryFactory } from "../src/factories/Factories";
 
 export class RoleController {
-  private get roleRepository(): Repository<Role> {
-    return AppDataSource.getRepository(Role);
+  private roleRepositoryFactory: RoleRepositoryFactory;
+
+  constructor(roleRepositoryFactory: RoleRepositoryFactory) {
+    this.roleRepositoryFactory = roleRepositoryFactory;
   }
 
   // Get all users
   public getAllRoles = async (req: Request, res: Response): Promise<void> => {
     try {
-      const roles = await this.roleRepository.find();
+      const roleRepository = this.roleRepositoryFactory.createRoleRepository();
+      const roles = await roleRepository.findAll();
 
       if (roles.length === 0) {
         res.status(StatusCodes.NO_CONTENT);
@@ -30,6 +32,7 @@ export class RoleController {
   // Get Role by ID
   public getRoleById = async (req: Request, res: Response): Promise<void> => {
     const id = parseInt(req.params.id as string);
+    const roleRepository = this.roleRepositoryFactory.createRoleRepository();
 
     if (isNaN(id)) {
       res.status(StatusCodes.BAD_REQUEST).send("Invalid ID format");
@@ -37,7 +40,7 @@ export class RoleController {
     }
 
     try {
-      const role = await this.roleRepository.findOne({ where: { id: id } });
+      const role = await roleRepository.findById(id);
       if (!role) {
         res.status(StatusCodes.NOT_FOUND).send(`Role not found with ID: ${id}`);
         return;

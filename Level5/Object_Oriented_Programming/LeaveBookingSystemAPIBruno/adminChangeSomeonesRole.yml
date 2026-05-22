@@ -1,0 +1,23 @@
+info:
+  name: adminChangeSomeonesRole
+  type: http
+  seq: 16
+
+http:
+  method: PATCH
+  url: http://localhost:8901/api/admin/staff/6/profile
+  body:
+    type: json
+    data: |-
+      {
+        "roleId": 3
+      }
+  auth:
+    type: bearer
+    token: "{{loginAdmin}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

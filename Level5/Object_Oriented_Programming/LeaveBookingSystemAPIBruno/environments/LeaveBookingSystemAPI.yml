@@ -1,0 +1,8 @@
+name: LeaveBookingSystemAPI
+variables:
+  - secret: true
+    name: loginManager
+  - secret: true
+    name: loginAdmin
+  - secret: true
+    name: loginStaff

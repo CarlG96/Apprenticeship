@@ -9,6 +9,6 @@ export class LeaveType {
   @Column({ unique: true, name: "type_name" })
   typeName: string;
 
-  @OneToMany(() => LeaveBalance, leaveBalance => leaveBalance.leaveType)
+  @OneToMany(() => LeaveBalance, (leaveBalance) => leaveBalance.leaveType)
   balances: LeaveBalance[];
 }

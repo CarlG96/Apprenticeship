@@ -1,9 +1,21 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, CreateDateColumn } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+  CreateDateColumn,
+} from "typeorm";
 import { User } from "./User";
 import { LeaveType } from "./LeaveType";
 import { LeaveRequestStatus } from "./LeaveRequestStatus";
 import { LeaveRequestState } from "../states/LeaveRequestState";
-import { PendingState, ApprovedState, RejectedState, CancelledState } from "../states/LeaveRequestStates";
+import {
+  PendingState,
+  ApprovedState,
+  RejectedState,
+  CancelledState,
+} from "../states/LeaveRequestStates";
 
 @Entity("leave_requests")
 export class LeaveRequest {
@@ -33,8 +45,12 @@ export class LeaveRequest {
 
   // Calculate days between start and end (inclusive)
   get daysRequested(): number {
-    const start = typeof this.startDate === "string" ? new Date(this.startDate) : this.startDate;
-    const end = typeof this.endDate === "string" ? new Date(this.endDate) : this.endDate;
+    const start =
+      typeof this.startDate === "string"
+        ? new Date(this.startDate)
+        : this.startDate;
+    const end =
+      typeof this.endDate === "string" ? new Date(this.endDate) : this.endDate;
 
     if (!start || !end) {
       return 0;

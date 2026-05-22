@@ -1,0 +1,17 @@
+info:
+  name: managerRejectStaffLeaveRequest
+  type: http
+  seq: 14
+
+http:
+  method: PATCH
+  url: http://localhost:8901/api/manager/leave-requests/14/reject
+  auth:
+    type: bearer
+    token: "{{loginManager}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,28 @@
+info:
+  name: addStaffMember
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:8901/api/admin/staff
+  body:
+    type: json
+    data: |-
+      {
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "email": "jane.doe@example4.com",
+        "password": "SecurePass1!",
+        "roleId": 3,
+        "managerId": 2
+      }
+  auth:
+    type: bearer
+    token: "{{loginAdmin}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

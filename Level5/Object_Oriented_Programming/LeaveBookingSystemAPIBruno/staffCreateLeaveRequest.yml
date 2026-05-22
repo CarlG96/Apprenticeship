@@ -1,0 +1,25 @@
+info:
+  name: staffCreateLeaveRequest
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: http://localhost:8901/api/staff/me/leave-requests
+  body:
+    type: json
+    data: |-
+      {
+        "leaveTypeId": 1,
+        "startDate": "2026-10-10",
+        "endDate": "2026-10-12"
+      }
+  auth:
+    type: bearer
+    token: "{{loginStaff}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

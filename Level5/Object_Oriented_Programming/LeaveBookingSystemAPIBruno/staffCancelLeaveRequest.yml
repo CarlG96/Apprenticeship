@@ -1,0 +1,17 @@
+info:
+  name: staffCancelLeaveRequest
+  type: http
+  seq: 11
+
+http:
+  method: PATCH
+  url: http://localhost:8901/api/staff/me/leave-requests/17/cancel
+  auth:
+    type: bearer
+    token: "{{loginStaff}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

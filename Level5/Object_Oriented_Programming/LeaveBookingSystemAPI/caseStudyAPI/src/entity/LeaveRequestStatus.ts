@@ -9,6 +9,6 @@ export class LeaveRequestStatus {
   @Column({ unique: true })
   status: string;
 
-  @OneToMany(() => LeaveRequest, leaveRequest => leaveRequest.status)
+  @OneToMany(() => LeaveRequest, (leaveRequest) => leaveRequest.status)
   leaveRequests: LeaveRequest[];
 }

@@ -1,0 +1,27 @@
+info:
+  name: addManager
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: http://localhost:8901/api/admin/staff
+  body:
+    type: json
+    data: |-
+      {
+        "firstName": "Alice",
+        "lastName": "Manager",
+        "email": "alice.manager@example2.com",
+        "password": "ManagerPass123!",
+        "roleId": 1
+      }
+  auth:
+    type: bearer
+    token: "{{loginAdmin}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

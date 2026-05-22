@@ -1,0 +1,22 @@
+info:
+  name: loginStaff
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: http://localhost:8901/api/auth/login
+  body:
+    type: json
+    data: |-
+      {
+        "email": "jane.doe@example2.com",
+        "password": "SecurePass1!"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

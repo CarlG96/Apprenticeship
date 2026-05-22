@@ -9,14 +9,19 @@ export class PendingState implements LeaveRequestState {
     const statusRepo = AppDataSource.getRepository(LeaveRequestStatus);
     const balanceRepo = AppDataSource.getRepository(LeaveBalance);
 
-    const approvedStatus = await statusRepo.findOne({ where: { status: "Approved" } });
+    const approvedStatus = await statusRepo.findOne({
+      where: { status: "Approved" },
+    });
     if (!approvedStatus) throw new Error("Approved status not found");
 
     request.status = approvedStatus;
 
     // Reduce leave balance
     const balance = await balanceRepo.findOne({
-      where: { user: { id: request.user.id }, leaveType: { id: request.leaveType.id } },
+      where: {
+        user: { id: request.user.id },
+        leaveType: { id: request.leaveType.id },
+      },
     });
     if (balance) {
       balance.remaining -= request.daysRequested;
@@ -26,7 +31,9 @@ export class PendingState implements LeaveRequestState {
 
   async reject(request: LeaveRequest): Promise<void> {
     const statusRepo = AppDataSource.getRepository(LeaveRequestStatus);
-    const rejectedStatus = await statusRepo.findOne({ where: { status: "Rejected" } });
+    const rejectedStatus = await statusRepo.findOne({
+      where: { status: "Rejected" },
+    });
     if (!rejectedStatus) throw new Error("Rejected status not found");
 
     request.status = rejectedStatus;
@@ -34,7 +41,9 @@ export class PendingState implements LeaveRequestState {
 
   async cancel(request: LeaveRequest): Promise<void> {
     const statusRepo = AppDataSource.getRepository(LeaveRequestStatus);
-    const cancelledStatus = await statusRepo.findOne({ where: { status: "Cancelled" } });
+    const cancelledStatus = await statusRepo.findOne({
+      where: { status: "Cancelled" },
+    });
     if (!cancelledStatus) throw new Error("Cancelled status not found");
 
     request.status = cancelledStatus;
@@ -59,14 +68,19 @@ export class ApprovedState implements LeaveRequestState {
     const statusRepo = AppDataSource.getRepository(LeaveRequestStatus);
     const balanceRepo = AppDataSource.getRepository(LeaveBalance);
 
-    const cancelledStatus = await statusRepo.findOne({ where: { status: "Cancelled" } });
+    const cancelledStatus = await statusRepo.findOne({
+      where: { status: "Cancelled" },
+    });
     if (!cancelledStatus) throw new Error("Cancelled status not found");
 
     request.status = cancelledStatus;
 
     // Restore leave balance
     const balance = await balanceRepo.findOne({
-      where: { user: { id: request.user.id }, leaveType: { id: request.leaveType.id } },
+      where: {
+        user: { id: request.user.id },
+        leaveType: { id: request.leaveType.id },
+      },
     });
     if (balance) {
       balance.remaining += request.daysRequested;
@@ -114,4 +128,3 @@ export class CancelledState implements LeaveRequestState {
     return "Cancelled";
   }
 }
-

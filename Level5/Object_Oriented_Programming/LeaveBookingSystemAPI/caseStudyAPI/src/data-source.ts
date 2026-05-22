@@ -17,5 +17,12 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_DATABASE,
   synchronize: false,
   logging: false,
-  entities: [Role, User, LeaveType, LeaveBalance, LeaveRequest, LeaveRequestStatus],
+  entities: [
+    Role,
+    User,
+    LeaveType,
+    LeaveBalance,
+    LeaveRequest,
+    LeaveRequestStatus,
+  ],
 });

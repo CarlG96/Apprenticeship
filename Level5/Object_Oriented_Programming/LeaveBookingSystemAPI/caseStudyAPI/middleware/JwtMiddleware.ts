@@ -11,7 +11,11 @@ export interface JwtAuthRequest extends Request {
 }
 
 export class JwtMiddleware {
-  public static verifyToken(req: JwtAuthRequest, res: Response, next: NextFunction): void {
+  public static verifyToken(
+    req: JwtAuthRequest,
+    res: Response,
+    next: NextFunction,
+  ): void {
     const authHeader = req.headers.authorization;
     const token = authHeader?.startsWith("Bearer ")
       ? authHeader.slice(7)
@@ -23,7 +27,10 @@ export class JwtMiddleware {
     }
 
     try {
-      const payload = jwt.verify(token, process.env.JWT_SECRET || "default-secret") as any;
+      const payload = jwt.verify(
+        token,
+        process.env.JWT_SECRET || "default-secret",
+      ) as any;
       req.user = {
         userId: payload.userId,
         role: payload.role,
