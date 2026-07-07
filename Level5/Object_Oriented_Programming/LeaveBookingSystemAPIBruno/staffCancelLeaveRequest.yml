@@ -5,7 +5,7 @@ info:
 
 http:
   method: PATCH
-  url: http://localhost:8901/api/staff/me/leave-requests/17/cancel
+  url: http://localhost:8901/api/staff/me/leave-requests/22/cancel
   auth:
     type: bearer
     token: "{{loginStaff}}"

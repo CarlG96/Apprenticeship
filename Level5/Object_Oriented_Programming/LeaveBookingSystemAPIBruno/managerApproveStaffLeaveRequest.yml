@@ -5,7 +5,7 @@ info:
 
 http:
   method: PATCH
-  url: http://localhost:8901/api/manager/leave-requests/18/approve
+  url: http://localhost:8901/api/manager/leave-requests/23/approve
   auth:
     type: bearer
     token: "{{loginManager}}"
